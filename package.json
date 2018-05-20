@@ -1,0 +1,20 @@
+{
+  "name": "server-stack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myungjaeyu/serverside-stack.git"
+  },
+  "keywords": [],
+  "author": "Myungjae Yu <rootcode10@gmail.com> (https://github.com/myungjaeyu)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/myungjaeyu/serverside-stack/issues"
+  },
+  "homepage": "https://github.com/myungjaeyu/serverside-stack#readme"
+}
