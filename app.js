@@ -1,7 +1,8 @@
-const express = require('express');
+const express = require('express'),
+      config = require('./config');
 
 const app = express();
 
-app.use('/', express.static(__dirname + '/dist'));
+app.use('/static', express.static(__dirname + '/dist'));
 
-app.listen(3000, () => console.log(`Example app listening on port 3000!`));
+app.listen(config.port, () => console.log(`Example app listening on port ${ config.port }!`));
