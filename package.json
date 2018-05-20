@@ -20,7 +20,11 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "rambda": "^1.1.1"
+    "mysql2": "^1.5.3",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "rambda": "^1.1.1",
+    "sequelize": "^4.37.8"
   },
   "devDependencies": {
     "nodemon": "^1.17.4"
