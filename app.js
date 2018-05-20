@@ -2,7 +2,7 @@ const express = require('express'),
       config = require('./config'),
       R = require('rambda');
 
-const api = require('./routes/api');
+const api = require('./routes/api')(config.orm());
 
 const app = express();
 
