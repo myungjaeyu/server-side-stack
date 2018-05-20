@@ -6,7 +6,8 @@ const config = {
     orm : ((database, username, password, host, dialect) => new Sequelize(database, username, password, {
             host: host, dialect: dialect,
             operatorsAliases: false,
-            pool: { max: 5, min: 0, acquire: 30000, idle: 10000 }
+            pool: { max: 5, min: 0, acquire: 30000, idle: 10000 },
+            define: { freezeTableName: true, timestamps: false }
         })
     )(
         process.env.DB_DATABASE || 'postgres', 
