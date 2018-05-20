@@ -1,7 +1,6 @@
 const express = require('express'),
-      router = express.Router();
-
-const sum = require('./sum');
+      router = express.Router(),
+      sum = require('./sum');
 
 router.get('/sumd/:no', sum);
 
