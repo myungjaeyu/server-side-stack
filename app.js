@@ -1,12 +1,14 @@
 const express = require('express'),
-      config = require('./config');
+      config = require('./config'),
+      R = require('rambda');
 
 const api = require('./routes/api');
 
 const app = express();
 
 app.use('/', express.static(__dirname + '/dist'));
-for(v of config.uses) app.use(v);
+
+R.map(v => app.use(v), config.uses);
 
 app.use(api);
 
