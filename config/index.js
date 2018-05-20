@@ -3,7 +3,7 @@ const bodyParser = require('body-parser'),
 
 const config = {
     port: process.env.PORT || 3000,
-    orm : () => ((database, username, password, host, dialect) => new Sequelize(database, username, password, {
+    sequelize : () => ((database, username, password, host, dialect) => new Sequelize(database, username, password, {
             host: host, dialect: dialect,
             operatorsAliases: false,
             pool: { max: 5, min: 0, acquire: 30000, idle: 10000 }
