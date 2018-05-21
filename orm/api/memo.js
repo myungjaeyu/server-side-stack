@@ -1,4 +1,4 @@
-const Memo = require('./model/Memo');
+const Memo = require('../model/Memo');
 
 const create = (title, body) => Memo.create({ title : title, body : body });
 

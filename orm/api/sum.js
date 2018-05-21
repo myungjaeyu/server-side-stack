@@ -1,4 +1,4 @@
-const { orm } = require('../config');
+const { orm } = require('../../config');
 
 module.exports = (first, last) => orm.query(
     'SELECT :first + :last AS result', {
