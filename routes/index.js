@@ -1,8 +1,8 @@
 const express = require('express'),
       router = express.Router(),
       GraphHTTP = require('express-graphql'),
-      sum = require('./sum'),
-      memo = require('./memo'),
+      sum = require('./api/sum'),
+      memo = require('./api/memo'),
       schema = require('../graphql');
 
 router.get('/sum/:no', sum);

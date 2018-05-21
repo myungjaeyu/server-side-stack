@@ -1,5 +1,5 @@
 const R = require('rambda'),
-      { memo } = require('../orm');
+      { memo } = require('../../orm');
 
 const create = (req, res) => memo.create(req.body.title, req.body.body)
                                 .then(memo => res.json({ 
