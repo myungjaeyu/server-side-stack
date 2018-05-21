@@ -4,7 +4,8 @@ const express = require('express'),
       sum = require('./api/sum'),
       memo = require('./api/memo'),
       schema = require('../graphql'),
-      upload = require('../upload');
+      upload = require('../upload'),
+      token = require('../token');
 
 router.get('/sum/:no', sum);
 
@@ -17,5 +18,8 @@ router.delete('/memo/:id', memo.remove);
 router.use('/graphql', GraphHTTP({ schema : schema, pretty : true, graphiql : true }));
 
 router.post('/upload', upload.single, upload.callback);
+
+router.post('/token', token.sign);
+router.get('/token/:key', token.verify);
 
 module.exports = router;

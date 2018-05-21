@@ -16,6 +16,7 @@ const config = {
         process.env.DB_HOST || 'localhost', 
         process.env.DB_DIALECT || 'postgres'
     ),
+    jwt_secret : process.env.JWT_SECRET || 'secretKEYu4bi-test-1234@#',
     uses : {
         cors : (req, res, next) => [res.header('Access-Control-Allow-Origin', '*'), res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept'), next()],
         parser_json : bodyParser.json(),
