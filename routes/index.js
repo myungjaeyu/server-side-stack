@@ -7,7 +7,8 @@ const express = require('express'),
       schema = require('../graphql'),
       upload = require('../upload'),
       token = require('../token'),
-      { auth, user } = require('../passport');
+      { auth, user } = require('../passport'),
+      mock_session = require('../mock-session');
 
 router.get('/sum/:no', sum);
 
@@ -26,5 +27,9 @@ router.get('/token/:key', token.verify);
 
 router.post('/auth', auth);
 router.get('/user', user);
-  
+
+router.get('/mock', mock_session.join)
+router.post('/mock/login', mock_session.login);
+router.get('/mock/logout', mock_session.logout);
+
 module.exports = router;

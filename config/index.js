@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser'),
       Sequelize = require('sequelize'),
-      helmet = require('helmet');
+      helmet = require('helmet'),
+      session = require('express-session');
 
 const config = {
     port: process.env.PORT || 3000,
@@ -22,7 +23,10 @@ const config = {
         cors : (req, res, next) => [res.header('Access-Control-Allow-Origin', '*'), res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept'), next()],
         parser_json : bodyParser.json(),
         parser_urlencoded : bodyParser.urlencoded({ extended: true}),
-        helmet_defalut : helmet()
+        helmet_defalut : helmet(),
+        session : session({
+            secret: process.env.SESSION_SECRET || 'secretKEYu4bi-test-1234@#', resave: false, saveUninitialized: true }
+        )
     }
 };
 
