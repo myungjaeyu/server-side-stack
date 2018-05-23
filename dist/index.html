@@ -17,5 +17,31 @@
       <input type="submit" value="upload">
     </form>
 
+    <button onclick="auth_and_user('email1234@example.com', 'password1234')" >auth and user</button>
+
+    <script>
+      let json_header = { 'Accept': 'application/json', 'Content-Type': 'application/json' };
+
+      const auth_and_user = (email, password) => fetch('/auth',
+                                        {
+                                          method : 'POST',
+                                          headers: { ...json_header },
+                                          body : JSON.stringify({ email : email, password : password })
+                                        })
+                                        .then(e => e.json())
+                                        .then(e => {
+                                          console.log('toekn', e);
+
+                                          let token = e.token;
+
+                                          fetch('/user',{
+                                            headers: { Authorization : `Bearer ${ token }` }
+                                          })
+                                          .then(e => e.json())
+                                          .then(e => console.log('payload', e));
+                                        });
+    
+    </script>
+
   </body>
 </html>
