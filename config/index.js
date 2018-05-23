@@ -19,6 +19,7 @@ const config = {
         process.env.DB_DIALECT || 'postgres'
     ),
     jwt_secret : process.env.JWT_SECRET || 'secretKEYu4bi-test-1234@#',
+    oauth2_github : { client_id : process.env.GITHUB_CLIENT_ID || '', client_secret : process.env.GITHUB_CLIENT_SECRET || '', callback_url : '/auth/github/callback/' },
     uses : {
         cors : (req, res, next) => [res.header('Access-Control-Allow-Origin', '*'), res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept'), next()],
         parser_json : bodyParser.json(),
