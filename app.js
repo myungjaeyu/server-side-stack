@@ -3,13 +3,14 @@ const express = require('express'),
       passport = require('passport'),
       { port, uses, orm } = require('./config'),
       routes = require('./routes'),
-      { localStrategy, jwtStrategy } = require('./passport');
+      { localStrategy, jwtStrategy, githubStrategy } = require('./passport');
 
 const app = express();
 
 orm.authenticate().then(console.log('Connection has been established successfully.')).catch(err => console.error('Unable to connect to the database:', err));
 passport.use(localStrategy);
 passport.use(jwtStrategy);
+passport.use(githubStrategy);
 app.use('/', express.static(__dirname + '/dist'));
 R.map(v => app.use(v), uses);
 app.use(routes);
