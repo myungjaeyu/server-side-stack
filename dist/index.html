@@ -31,14 +31,7 @@
                                         .then(e => e.json())
                                         .then(e => {
                                           console.log('toekn', e);
-
-                                          let token = e.token;
-
-                                          fetch('/user',{
-                                            headers: { Authorization : `Bearer ${ token }` }
-                                          })
-                                          .then(e => e.json())
-                                          .then(e => console.log('payload', e));
+                                          fetch(`/user?access_token=${ e.token }`).then(e => e.json()).then(e => console.log('payload', e));
                                         });
     
     </script>
