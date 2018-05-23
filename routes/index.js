@@ -8,7 +8,8 @@ const express = require('express'),
       upload = require('../upload'),
       token = require('../token'),
       { auth, user, github } = require('../passport'),
-      mock_session = require('../mock-session');
+      mock_session = require('../mock-session'),
+      sendmail = require('../sendmail');
 
 router.get('/sum/:no', sum);
 
@@ -34,5 +35,7 @@ router.get('/mock/logout', mock_session.logout);
 
 router.get('/auth/github', github.auth);
 router.get('/auth/github/callback', github.callback);
+
+router.post('/sendmail', sendmail);
 
 module.exports = router;
