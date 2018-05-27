@@ -3,6 +3,8 @@ const bodyParser = require('body-parser'),
       helmet = require('helmet'),
       session = require('express-session');
 
+require('json-dotenv')();
+
 const config = {
     port: process.env.PORT || 3000,
     orm : ((database, username, password, host, dialect) => new Sequelize(database, username, password, {
