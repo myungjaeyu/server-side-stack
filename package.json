@@ -35,7 +35,8 @@
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
     "rambda": "^1.1.1",
-    "sequelize": "^4.37.8"
+    "sequelize": "^4.37.8",
+    "socket.io": "^2.1.1"
   },
   "devDependencies": {
     "json-dotenv": "0.0.1",
