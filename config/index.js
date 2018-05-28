@@ -16,8 +16,8 @@ const config = {
     )(
         process.env.DB_DATABASE || 'postgres', 
         process.env.DB_USERNAME || 'postgres', 
-        process.env.DB_PASSWORD || '', 
-        process.env.DB_HOST || 'localhost', 
+        process.env.DB_PASSWORD || 'postgres', 
+        process.env.DB_HOST || 'db', 
         process.env.DB_DIALECT || 'postgres'
     ),
     jwt_secret : process.env.JWT_SECRET || 'secretKEYu4bi-test-1234@#',
