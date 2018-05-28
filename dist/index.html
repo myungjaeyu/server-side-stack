@@ -7,6 +7,8 @@
 
     <title>server side stack</title>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+
   </head>
   <body>
 
@@ -34,6 +36,10 @@
                                           fetch(`/user?access_token=${ e.token }`).then(e => e.json()).then(e => console.log('payload', e));
                                         });
     
+    </script>
+
+    <script>
+      const socket = io();
     </script>
 
   </body>
