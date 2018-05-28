@@ -1,0 +1,15 @@
+web:
+  build: .
+  volumes:
+    - "./:/src"
+  ports:
+    - "8000:8000"
+  links:
+    - "db"
+
+db:
+  image: postgres
+  environment:
+    - POSTGRES_PASSWORD=postgres
+  ports:
+    - "5432:5432"
